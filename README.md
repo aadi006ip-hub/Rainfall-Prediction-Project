@@ -39,7 +39,7 @@ The model operates on 7 independent meteorological features to evaluate atmosphe
 ### 1. Feature Correlations
 During Exploratory Data Analysis (EDA), key trends were identified mapping how features like relative humidity and decreasing barometric pressure highly correlate with positive rain events.
 
-> 🔲 **[PLACEHOLDER: Insert your correlation heatmap or feature importance chart here]**
+> 🔲 **Heatmap.png**
 > *Tip: Save your chart from Colab as 'eda_chart.png', upload it to GitHub, and link it here like this: `![EDA Chart](eda_chart.png)`*
 
 ### 2. Live Interface Preview
