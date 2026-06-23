@@ -40,7 +40,7 @@ The model operates on 7 independent meteorological features to evaluate atmosphe
 During Exploratory Data Analysis (EDA), key trends were identified mapping how features like relative humidity and decreasing barometric pressure highly correlate with positive rain events.
 
 > 🔲 **Heatmap.png**
-> *Tip: Save your chart from Colab as 'eda_chart.png', upload it to GitHub, and link it here like this: `![EDA Chart](eda_chart.png)`*
+> *Tip: Save your chart from Colab as 'eda_chart.png', upload it to GitHub, and link it here like this: `Heatmap.png`*
 
 ### 2. Live Interface Preview
 The production application features dynamic feedback cards and responsive metric monitoring based on user sliding actions.
