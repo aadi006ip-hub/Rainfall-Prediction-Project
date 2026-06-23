@@ -16,15 +16,15 @@ st.markdown("Provide the local atmospheric readings below to analyze the probabi
 # 2. Input Fields aligned exactly with your dataset features
 st.subheader("📊 Atmospheric Feature Inputs")
 
-col1, col2 = st.columns(2)
+row1, row2 = st.rows(2)
 
-with col1:
+with row1:
     pressure = st.number_input("Pressure (hPa)", min_value=900.0, max_value=1100.0, value=1013.4, step=0.1)
     dewpoint = st.number_input("Dewpoint (°C)", min_value=-10.0, max_value=40.0, value=19.5, step=0.1)
     sunshine = st.number_input("Sunshine Hours", min_value=0.0, max_value=24.0, value=10.5, step=0.1)
     windspeed = st.number_input("Wind Speed (km/h)", min_value=0.0, max_value=150.0, value=12.4, step=0.1)
    
-with col2:
+with row2:
     winddirection = st.slider("Wind Direction (Degrees °)", min_value=0, max_value=360, value=70, step=5)
     humidity = st.slider("Humidity (%)", min_value=0, max_value=100, value=69)
     cloud = st.slider("Cloud Cover (%)", min_value=0, max_value=100, value=17)
