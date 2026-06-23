@@ -21,12 +21,12 @@ The model operates on 7 independent meteorological features to evaluate atmosphe
 | **`sunshine`** | Continuous | Total recorded duration of active daily sunshine hours. |
 | **`winddirection`**| Angular | The vector direction of wind tracking in compass degrees ($0-360^\circ$). |
 | **`windspeed`** | Continuous | Velocity rate of wind movement measured in km/h. |
-| **`rainfall`** *(Target)*| Binary | Prediction outcome (**1**: Rain expected, **0**: No rain). |
+| **`rainfall`** *(Target)*|
 
 ---
 
 ## 🛠️ Tech Stack & Architecture
-* **Core Language:** Python 3.x
+* **Core Language:** Python 3.12.8
 * **Exploratory Data Analysis & Manipulation:** Pandas, NumPy
 * **Visualization:** Matplotlib, Seaborn
 * **Model Engine:** Scikit-Learn (Random Forest Architecture)
@@ -74,15 +74,4 @@ The finalized model configuration was wrapped along with asset tracking structur
  * **Core Classifier:** Random Forest
  * **Key Strengths:** Handles multi-collinear meteorological inputs effectively without overfitting.
  * **Feature Importance:** Features like humidity, cloud, and sunshine hours emerged as the highest predictive indicators for impending precipitation.
-```
-
----
-
-### How to fill out the placeholders:
-1. At the very top, replace `INSERT_YOUR_STREAMLIT_CLOUD_LINK_HERE` with the actual public URL of your live app so recruiters can click it directly.
-2. Download your best graph from Colab and take a screenshot of your Streamlit app. Upload those images to your GitHub repository.
-3. Replace the placeholder blocks with simple markdown image tags:
-   `![Heatmap](heatmap.png)`
-   `![UI App Screenshot](app_screen.png)`
-
 ```
