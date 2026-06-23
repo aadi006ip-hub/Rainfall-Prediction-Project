@@ -39,15 +39,12 @@ The model operates on 7 independent meteorological features to evaluate atmosphe
 ### 1. Feature Correlations
 During Exploratory Data Analysis (EDA), key trends were identified mapping how features like relative humidity and decreasing barometric pressure highly correlate with positive rain events.
 
-> 🔲 **Heatmap.png**
-> *Tip: Save your chart from Colab as 'eda_chart.png', upload it to GitHub, and link it here like this: `Heatmap.png`*
+![Feature Correlation Heatmap](Heatmap.png)
 
 ### 2. Live Interface Preview
 The production application features dynamic feedback cards and responsive metric monitoring based on user sliding actions.
 
-> 🔲 **[PLACEHOLDER: Insert a screenshot of your working Streamlit application page here]**
-> *Tip: Take a screenshot of your live app, save it as 'streamlit_preview.png', and link it using: `![App UI](streamlit_preview.png)`*
-
+![Streamlit App Interface](Streamlit.png)
 ---
 
 ## 🚀 Model Deployment
