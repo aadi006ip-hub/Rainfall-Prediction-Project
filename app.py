@@ -13,19 +13,7 @@ st.set_page_config(
 st.title("🌧️ Automated Rainfall Prediction System")
 st.markdown("Provide the local atmospheric readings below to analyze the probability of rainfall.")
 
-# 2. Sidebar Settings
-st.sidebar.header("⚙️ Configuration")
-app_mode = st.sidebar.selectbox("App Mode:", ["Predict with My Model", "Run Simulation Mode"])
-
-# 3. Fallback Simulation Logic (Matches your exact 7 columns)
-def simulate_ml_model(press, dew, hum, cld, sun, wdir, wspd):
-    # Logic imitating actual meteorological correlations
-    score = (hum * 0.4) + (cld * 0.3) - (sun * 0.5) + (dew * 0.2) + ((1015 - press) * 0.2)
-    if score > 30:
-        return 1  # Rain
-    return 0  # No Rain
-
-# 4. Input Fields aligned exactly with your dataset features
+# 2. Input Fields aligned exactly with your dataset features
 st.subheader("📊 Atmospheric Feature Inputs")
 
 col1, col2 = st.columns(2)
@@ -43,43 +31,42 @@ with col2:
 
 st.write("---")
 
-# 5. Prediction Engine
+# 3. Prediction Engine
 prediction = None
 
-if app_mode == "Run Simulation Mode":
-    prediction = simulate_ml_model(pressure, dewpoint, humidity, cloud, sunshine, winddirection, windspeed)
-    st.sidebar.warning("⚠️ Running in Demo/Simulation mode.")
-else:
-    model_path = "rainfall_model.pkl"
-    
-    if os.path.exists(model_path):
-        try:
-            with open(model_path, "rb") as f:
-                model = pickle.load(f)
-            
-            # CRITICAL: This array perfectly matches your dataset column structure
-            features = np.array([[
-                pressure, 
-                dewpoint, 
-                humidity, 
-                cloud, 
-                sunshine, 
-                winddirection, 
-                windspeed
-            ]])
-            
-            # Generate the prediction from your trained ML file
-            pred_raw = model.predict(features)
-            prediction = int(pred_raw[0])
-                
-        except Exception as e:
-            st.error(f"Execution Error: {e}")
-            st.info("Check if your model requires data scaling (`StandardScaler`) before making predictions.")
-    else:
-        st.error(f"❌ Missing File: '{model_path}' was not found in this folder.")
-        st.info("Ensure you downloaded 'rainfall_model.pkl' from Colab and placed it next to this script.")
+# MATCHING YOUR FILE NAME FROM COLAB IMAGE
+model_path = "rainfall_prediction_model.pkl"
 
-# 6. Render Results Output
+if os.path.exists(model_path):
+    try:
+        with open(model_path, "rb") as file:
+            loaded_data = pickle.load(file)
+        
+        # UNWRAPPING THE DICTIONARY (Matching cell [60] from your image)
+        model = loaded_data["model"]
+        
+        # Mapping inputs into the correct array order
+        features = np.array([[
+            pressure, 
+            dewpoint, 
+            humidity, 
+            cloud, 
+            sunshine, 
+            winddirection, 
+            windspeed
+        ]])
+        
+        # Generate the prediction dynamically using your input features
+        pred_raw = model.predict(features)
+        prediction = int(pred_raw[0])
+            
+    except Exception as e:
+        st.error(f"Execution Error: {e}")
+else:
+    st.error(f"❌ Missing File: '{model_path}' was not found in this folder.")
+    st.info("Make sure you downloaded 'rainfall_prediction_model.pkl' from Colab and placed it in the same folder as this script.")
+
+# 4. Render Results Output
 if prediction is not None:
     st.subheader("🎯 System Output:")
     
