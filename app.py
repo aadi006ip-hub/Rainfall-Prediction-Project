@@ -10,7 +10,7 @@ st.set_page_config(
     layout="centered"
 )
 
-st.title("🌧️ Automated Rainfall Prediction System")
+st.title("🌧️ Rainfall Prediction System")
 st.markdown("Provide the local atmospheric readings below to analyze the probability of rainfall.")
 
 # 2. Input Fields aligned exactly with your dataset features
