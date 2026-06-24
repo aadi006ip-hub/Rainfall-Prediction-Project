@@ -1,4 +1,4 @@
-# 🌧️ Automated Rainfall Prediction using Machine Learning
+## 🌧️ Rainfall Prediction using Machine Learning
 
 [![Streamlit App](streamlit.jpg)](https://rainfall-prediction-project-ahmvchzty59jtvtjuva7vy.streamlit.app/)
 
