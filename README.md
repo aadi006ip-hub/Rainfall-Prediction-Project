@@ -1,8 +1,6 @@
 # 🌧️ Rainfall Prediction using Machine Learning
 
-<div align="center">
 [![Streamlit App](streamlit.jpg)](https://rainfall-prediction-project-ahmvchzty59jtvtjuva7vy.streamlit.app/)
-</div>
 
 ## 📌 Project Overview
 This project focuses on building a binary classification machine learning pipeline to predict regional rainfall based on a comprehensive set of local meteorological variables. By training an optimized **Random Forest Classifier**, the system tracks subtle changes in ambient air saturation, cloud cover, and barometric trends to forecast whether precipitation will occur ($1$ for Rain, $0$ for No Rain). 
